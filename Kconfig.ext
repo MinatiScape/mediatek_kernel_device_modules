@@ -118,3 +118,42 @@ config FACTORY_BUILD
 	help
 	  This macro will be defined when build factory version. It is used to
 	  distinguish factory and dev codes in kernel.
+
+config DEVICE_MODULES_MTK_SCPSYS_DUMMY
+	bool "scpsys-dummy KO"
+	default n
+	help
+	  This macro define if scpsys-dummy.o need to be built.
+	  Say n if unsure.
+
+config DEVICE_MODULES_SCSI_UFS_MEDIATEK_ISE
+	bool "distinguish ufs-mediatek KO with the one that support iSE"
+	default n
+	help
+	  This macro define if ufs-mediatek-mod.o need to be built.
+	  Say n if unsure.
+
+config MTK_CCU_RPROC_MSSV
+	bool "mtk_ccu_mssv KO"
+	depends on MTK_CCU_RPROC
+	default n
+	help
+	  This macro define if mtk_ccu_mssv.o need to be built.
+	  Say n if unsure.
+
+config MTK_LOW_POWER_MODULE_DEBUG_V1
+	bool "mtk-lpm-dbg-common-v1 KO"
+	default n
+	help
+	  This macro define if mtk-lpm-dbg-common-v1.o need to be built.
+	  Say n if unsure.
+
+config MTK_LOW_POWER_MODULE_DEBUG_V2
+	bool "mtk-lpm-dbg-common-v2 KO"
+	depends on !MTK_LOW_POWER_MODULE_DEBUG_V1
+	default y
+	help
+	  This macro define if mtk-lpm-dbg-common-v2.o need to be built.
+	  Say y if unsure.
+
+endmenu

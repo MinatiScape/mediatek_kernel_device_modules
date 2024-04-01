@@ -1,6 +1,9 @@
 # common KOs
+ifeq ($(CONFIG_MTK_LOW_POWER_MODULE_DEBUG_V1),y)
 obj-$(CONFIG_MTK_LOW_POWER_MODULE) += v1/
+else ifeq ($(CONFIG_MTK_LOW_POWER_MODULE_DEBUG_V2),y)
 obj-$(CONFIG_MTK_LOW_POWER_MODULE) += v2/
+endif
 
 ifeq ($(CONFIG_MTK_LPM_MT6983),m)
 ifneq ($(wildcard $(srctree)/$(src)/mt6983),)
